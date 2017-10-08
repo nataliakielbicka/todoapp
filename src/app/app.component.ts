@@ -6,7 +6,8 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   newTask: string;
-  taskList: Array <string> = [];
+  taskList: Array<string> = [];
+  taskDone: Array<string> = [];
 
   add() {
     this.taskList.push(this.newTask);
@@ -14,5 +15,16 @@ export class AppComponent {
   }
   remove(task: string) {
     this.taskList = this.taskList.filter(e => e !== task);
+  }
+  removeDone(task: string) {
+    this.taskDone = this.taskDone.filter(e => e !== task);
+  }
+  done(task: string) {
+    this.taskDone.push(task);
+    this.remove(task);
+  }
+  addToTodo(task: string) {
+    this.taskList.push(task);
+    this.removeDone(task);
   }
 }
