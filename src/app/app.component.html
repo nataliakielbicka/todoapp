@@ -2,8 +2,8 @@
   <h2 class="todo-wrapper__h2">To Do App using VanillaJS</h2>
   <div class="todo-wrapper__todo todo">
     <div class="todo__header">
-      <input type="text" class="todo__input" id="addinput" placeholder="Enter something...">
-      <button type="submit" value="add" class="todo__btn" id="addbtn"></button>
+      <input type="text" class="todo__input" [(ngModel)]="newTask" placeholder="Enter something...">
+      <button type="submit" class="todo__btn" (click)="add()"></button>
     </div>
     <span class="todo__warning" id="warning">You've already added this task to todo list, oh come on :)</span>
   </div>
@@ -14,7 +14,11 @@
           <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
         </h2>
         <h3 class="todo__text" id="todo-text"></h3>
-        <ul class="todo__list list" id="todo-list"></ul>
+        <ul class="todo__list list" id="todo-list">
+          <li *ngFor="let task of taskList" class="list__item item">
+            <span class="item__text">{{task}}</span>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="todo__column">

@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'todo',
+  selector: 'app-todo',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  
+  newTask: string;
+  taskList: Array <string> = [];
+
+  add() {
+    this.taskList.push(this.newTask);
+    this.newTask = '';
+  }
 }
