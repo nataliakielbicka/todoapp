@@ -13,7 +13,11 @@
         <h2 class="todo__h2">I have to:
           <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
         </h2>
-        <h3 class="todo__text" id="todo-text"></h3>
+        <h3 class="todo__text" *ngIf="taskList.length > 0; else elseBlock">You have
+          <strong>{{taskList.length}}</strong> tasks to do.</h3>
+        <ng-template #elseBlock>
+          <h3 class="todo__text">You have no tasks to do.</h3>
+        </ng-template>
         <ul class="todo__list list" id="todo-list">
           <li *ngFor="let task of taskList" class="list__item item">
             <span class="item__text">{{task}}</span>
@@ -30,6 +34,11 @@
         <h2 class="todo__h2">Completed tasks:
           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
         </h2>
+        <h3 class="todo__text" *ngIf="taskDone.length > 0; else elseBlock">You have
+          <strong>{{taskDone.length}}</strong> tasks to do.</h3>
+        <ng-template #elseBlock>
+          <h3 class="todo__text">You have no tasks to do.</h3>
+        </ng-template>
         <h3 class="todo__text" id="todo-text-done"></h3>
         <ul class="todo__list todo__list--done" id="done-list">
           <li *ngFor="let task of taskDone" class="list__item item">
