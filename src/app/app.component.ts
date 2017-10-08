@@ -12,4 +12,7 @@ export class AppComponent {
     this.taskList.push(this.newTask);
     this.newTask = '';
   }
+  remove(task: string) {
+    this.taskList = this.taskList.filter(e => e !== task);
+  }
 }

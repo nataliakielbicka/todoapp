@@ -17,6 +17,9 @@
         <ul class="todo__list list" id="todo-list">
           <li *ngFor="let task of taskList" class="list__item item">
             <span class="item__text">{{task}}</span>
+            <span class="item__buttons">
+              <span class="item__buttons--remove" (click)="remove(task)"></span>
+            </span>
           </li>
         </ul>
       </div>
