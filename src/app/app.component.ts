@@ -10,8 +10,10 @@ export class AppComponent {
   taskDone: Array<string> = [];
 
   add() {
-    this.taskList.push(this.newTask);
-    this.newTask = '';
+    if (this.newTask) {
+      this.taskList.push(this.newTask);
+      this.newTask = '';
+    }
   }
   remove(task: string) {
     this.taskList = this.taskList.filter(e => e !== task);
