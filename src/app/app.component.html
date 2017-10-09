@@ -35,9 +35,9 @@
           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
         </h2>
         <h3 class="todo__text" *ngIf="taskDone.length > 0; else elseBlock">You have
-          <strong>{{taskDone.length}}</strong> tasks to do.</h3>
+          <strong>{{taskDone.length}}</strong> completed tasks.</h3>
         <ng-template #elseBlock>
-          <h3 class="todo__text">You have no tasks to do.</h3>
+          <h3 class="todo__text">You have no completed tasks.</h3>
         </ng-template>
         <h3 class="todo__text" id="todo-text-done"></h3>
         <ul class="todo__list todo__list--done" id="done-list">
