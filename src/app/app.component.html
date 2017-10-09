@@ -2,7 +2,7 @@
   <h2 class="todo-wrapper__h2">To Do App using VanillaJS</h2>
   <div class="todo-wrapper__todo todo">
     <div class="todo__header">
-      <input type="text" class="todo__input" [(ngModel)]="newTask" placeholder="Enter something...">
+      <input type="text" class="todo__input" [(ngModel)]="newTask" (keyup.enter)="add()" placeholder="Enter something...">
       <button type="submit" class="todo__btn" (click)="add()"></button>
     </div>
     <span class="todo__warning" id="warning">You've already added this task to todo list, oh come on :)</span>
